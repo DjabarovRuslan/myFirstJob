@@ -10,7 +10,7 @@
 </head>
 
 <body>
-<h2>hello,Dolly</h2>
+<!-- <h2>hello,ruslan</h2> -->
     <a href="<?=PATH?>">домашняя страница</a>
     <br>
     <a href="<?=PATH?>admin/">админка</a>
