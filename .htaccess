@@ -1,0 +1,41 @@
+AddDefaultCharset utf-8
+
+php_flag magic_quotes_gpc Off
+
+#php_flag display_errors on 
+#php_value error_reporting -1;
+Options -Indexes
+
+    
+
+RewriteEngine On   
+RewriteBase /
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule .* index.php [QSA]
+#RewriteRule (.*) index.php?$1 [L,QSA]
+
+
+
+
+#RewriteRule ^search/(\d+) index.php?search=$1 [QSA]
+# используем в коде define("RUSLAN", TRUE) чтоб ограничить доступ к файлам и каталогам через адр строку
+
+    
+#RewriteRule ^product/(.*)/?$ product.php?product=$1
+#RewriteRule ^category/(.*) ?category=$1 [QSA]
+
+# ниже версия для  алиасов
+#RewriteRule ^product/([a-z0-9-]+)/?$ product.php?product=$1
+
+# ниже версия без алиасов
+#RewriteRule ^product/(\d+)/?$ product.php?product=$1
+#RewriteRule ^category/(\d+) ?category=$1 [QSA]
+#RewriteRule ^page=(\d+) ?page=$1 [QSA]
+
+#RewriteRule ^product/([a-z0-9-]+) product.php?product=$1
+#RewriteRule ^category/(\d+) index.php?category=$1 [QSA]
+
+ # [QSA]- добавление к  строке запроса т.е.можно добавлять к category еще что то
+ #например мы добавляем page к category в пагинации
